@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   def require_user
     unless logged_in?
-      flash[:error] = 'You must be logged in to perform that action'
+      flash[:notice] = 'Log in or create an account to start chatting'
       redirect_to login_path
     end
   end

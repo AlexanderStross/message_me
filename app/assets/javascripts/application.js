@@ -33,6 +33,12 @@ submit_message = function() {
   });
 };
 
+window.setTimeout(function() {
+$('.ui.message').fadeTo(500, 0).slideUp(500, function(){
+    $(this).remove();
+});
+}, 3000);
+
 $(document).on('turbolinks:load', function() {
   $('.ui.dropdown').dropdown();
   $('.message .close').on('click', function() {
