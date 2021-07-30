@@ -3,7 +3,7 @@
     <div class="ui container">
       <%= link_to 'Chatroom', root_path, class: 'item active' %>
     <a class="item">
-      Messages
+      <%= current_user.username if !!current_user %>
     </a>
     <div class="right menu">
       <div class="ui dropdown item">
@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="item">
-        <%= link_to 'Sign Up', login_path, class: 'ui primary button' if !logged_in? %>
+        <%= link_to 'Sign Up', signup_path, class: 'ui primary button' if !logged_in? %>
       </div>
     </div>
   </div>

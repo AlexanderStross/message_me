@@ -33,12 +33,6 @@ submit_message = function() {
   });
 };
 
-window.setTimeout(function() {
-$('.ui.message').fadeTo(500, 0).slideUp(500, function(){
-    $(this).remove();
-});
-}, 3000);
-
 $(document).on('turbolinks:load', function() {
   $('.ui.dropdown').dropdown();
   $('.message .close').on('click', function() {
@@ -46,4 +40,15 @@ $(document).on('turbolinks:load', function() {
   });
   submit_message();
   scroll_bottom();
+  window.setTimeout(function() {
+    $('.ui.message').fadeTo(500, 0).slideUp(500, function() {
+      $(this).remove();
+    });
+  }, 3000);
+  $('.activating.element')
+    .popup();
+  $('.button')
+    .popup({
+      inline: true
+    });
 })

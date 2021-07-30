@@ -1,0 +1,29 @@
+<%= render 'shared/errors', obj: @user %>
+<%= form_with(model: @user, class: "ui form", local: true) do |f| %>
+<div class="field">
+  <%= f.label :username %>
+  <%= f.text_field :username, placeholder: "Enter a username" %>
+</div>
+<div class="field">
+  <%= f.label :password %>
+  <%= f.password_field :password, placeholder: "Choose a password" %>
+</div>
+<div class="field">
+  <div>
+    <%= f.check_box :accepted_terms, class: "ui checkbox" %>
+    <%= f.label "I agree to the Terms and Conditions" %>
+    <!-- <input type="checkbox" tabindex="0" class="hidden">
+    <label>I agree to the Terms and Conditions</label> -->
+    <div class="ui icon button"
+      data-content="Use at your own risk, if I were to build this correctly it would use end to
+    end encryption.  I may just do that for the fun of it but for right now this is
+    a completely insecure instant messaging system.  I will assume all I would have to
+    is create a public and private key pair with a salt to secure the messages between
+    end points.  Of course I need to activate ssl as well."
+      data-variation="basic">
+      <i class="add icon"></i>
+    </div>
+  </div>
+</div>
+<%= f.submit( "Sign up" , class: "ui button") %>
+<% end %>
