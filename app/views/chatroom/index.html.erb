@@ -31,14 +31,11 @@
     <div class="content">
       <div class="ui inverted vertical menu">
         <a class="active item">
-          Home
+          Who is online?
         </a>
-        <a class="item">
-          Messages
-        </a>
-        <a class="item">
-          Friends
-        </a>
+        <% @users.each do |u| %>
+        <a class="item"><%= u.username  %></a>
+        <% end %>
       </div>
     </div>
   </div>
